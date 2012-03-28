@@ -1,0 +1,24 @@
+fieldset
+	legend Pending tasks
+	for task in tasks
+		if (!task.done)
+			if(task.due_date<Date.now())
+				div.past_date.task
+					p=task.title
+						input(type="button", value="done", class="button", onClick="self.location.href='/done/"+task._id.toHexString()+"'")
+					p Due date: #{task.due_date}
+						input(type="button", value="remove", class="button", onClick="self.location.href='/remove/"+task._id.toHexString()+"'")
+			else
+				div.task
+					p=task.title 
+						input(type="button", value="done", class="button", onClick="self.location.href='/done/"+task._id.toHexString()+"'")
+					p Due date: #{task.due_date}
+						input(type="button", value="remove", class="button", onClick="self.location.href='/remove/"+task._id.toHexString()+"'")
+				
+fieldset
+	legend Tasks Done
+	for task in tasks
+		if (task.done)
+			div.task
+				p=task.title
+					input(type="button", value="remove", class="button", onClick="self.location.href='/remove/"+task._id.toHexString()+"'")

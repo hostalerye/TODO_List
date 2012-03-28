@@ -1,6 +1,17 @@
-!!!
+!!! 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+	head
+		link(rel="stylesheet", href="/stylesheets/style.css")
+		title ToDo List
+	body
+		#container
+			form(action='/', method='POST')
+				fieldset
+					legend Create a new task
+					p 
+						label#task_text task : 
+							input(type="text", name="task[title]")
+						label#task_date due date :
+							input(type="date", name="task[due_date]", value="mm/dd/yyyy")
+						input(type="submit", value="create", class="button")
+				div!= body
