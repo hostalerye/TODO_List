@@ -1,7 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var db = require('./config/dbconfig');
-
 var Schema = mongoose.Schema;
 
 var TaskSchema = new Schema({
