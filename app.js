@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var db = require('./config/dbconfig');
 var Schema = mongoose.Schema;
-//Just to commit
+//Just to test commit hook
 var TaskSchema = new Schema({
   title    : String,
 	due_date : Date,
