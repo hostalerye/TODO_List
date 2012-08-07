@@ -51,9 +51,9 @@ app.get('/done/:id', function(req, res) {
 			task.done = true;
 			task.save(function(err) {
 				if (err)
-					console.log('error')
+					console.log('error');
 				else
-					res.redirect('/')
+					res.redirect('/');
 			});
 		}
 	});
@@ -61,7 +61,7 @@ app.get('/done/:id', function(req, res) {
 
 app.get('/remove/:id', function(req, res) {
 	Task.remove({_id:req.params.id}, function() {
-		res.redirect('/')
+		res.redirect('/');
 	});
 });
 
@@ -72,5 +72,5 @@ app.get('/', function(req, res) {
 		res.render('tasks', {locals : {
 			tasks: tasks
 		}});	
-	})
+	});
 });
