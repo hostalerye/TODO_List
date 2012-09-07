@@ -9,4 +9,7 @@
     , "mocha": ""
     , "should": ""
   }
+  , scripts: {
+    "test": "mocha"
+  }  
 }
